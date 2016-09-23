@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="af56a159-983f-49ad-b3ea-7fd11603f4ab">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="matricula" class="java.lang.String">
+		<defaultValueExpression><![CDATA["AA100"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from Datos where Matricula = $P{matricula};]]>
+	</queryString>
+	<field name="Matricula" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Apellidos" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Domicilio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Grupo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="155" y="25" width="276" height="30" uuid="3954a273-6482-46a8-bab6-2aaab180f1c4"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[REPORTE MATRÏCULA]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="364cecc7-4ec4-4679-8152-d020b7fa41aa"/>
+				<text><![CDATA[Matricula]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="124" y="0" width="100" height="20" uuid="b2d04358-8782-4659-b143-a4bcb18ac8f4"/>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="0" width="100" height="20" uuid="7ad84ad9-d800-4834-aebc-7bcbc9a4a86d"/>
+				<text><![CDATA[Apellidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="366" y="0" width="100" height="20" uuid="8c2f6c55-751d-4608-a05b-51130f4819cf"/>
+				<text><![CDATA[Domicilio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="484" y="0" width="100" height="20" uuid="100a8ed5-b08f-4c61-b417-40d3c8beaadd"/>
+				<text><![CDATA[Grupo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="ebd92966-0031-43a3-ac6f-60a3a368cba0"/>
+				<textFieldExpression><![CDATA[$F{Matricula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="124" y="0" width="100" height="20" uuid="ba067411-39c2-4833-8807-8a2969e577ed"/>
+				<textFieldExpression><![CDATA[$F{Nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="250" y="0" width="100" height="20" uuid="62d63ec2-0ce5-4acc-98cf-f30f788e4137"/>
+				<textFieldExpression><![CDATA[$F{Apellidos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="366" y="0" width="100" height="20" uuid="251aa673-734b-4adb-8d7d-29bf653afc10"/>
+				<textFieldExpression><![CDATA[$F{Domicilio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="484" y="0" width="100" height="20" uuid="b0c5932d-be20-4abc-958a-46f3fd725e89"/>
+				<textFieldExpression><![CDATA[$F{Grupo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="0" y="15" width="100" height="20" uuid="107c1bb0-471f-4ad0-b99c-d60b7ad772e7"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="224" y="15" width="80" height="20" uuid="a0dedb1f-ab5c-4ee4-b6d8-58069161dfef"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="310" y="15" width="40" height="20" uuid="86e059e8-0fca-41db-8e5c-2db57dea47c3"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
